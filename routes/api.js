@@ -52,7 +52,7 @@ module.exports.library = (req, res) => {
 
     if(req.params.id) {
 
-        database.query(`SELECT id, title, author, sbn, binding, Price, description FROM book WHERE id = ${req.params.id}`, result => {
+        database.query(`SELECT id, title, author, sbn, image, binding, Price, description FROM book WHERE id = ${req.params.id}`, result => {
 
             if(result.length <= 0) {
                 res.end(`Book with ID of ${req.params.id} does not exist`);
